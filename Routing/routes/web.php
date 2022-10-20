@@ -15,36 +15,19 @@ use App\Http\Controllers\ShowApprenants;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/Save_page', [ApprenantsController::class, 'select'])->name('getRoute');
-Route::post('/insert', [ApprenantsController::class, 'insertData'])->name('insert');
-
-
-
-
 // ///////// routing (Route Parammetre, csrf Protection) /////////// 
 
-// Route::get('/request', function (){
-//     return view('helloworld');
-// });
-
-// use Illuminate\Http\Request;
-
-// Route::any('/user', function (Request $request) {
-//     $name = $request->input("input");
-//     return $name;
-// });
-// Route::get('hello', function(){
-//     return view('helloworld');
-// });
-
-// // Route::get('/Promotion{id}', [ApprenantsController::class, 'addId']);
-// Route::get('/apprenants/{name}', [ApprenantsController::class, 'addId']);
+Route::get('/request', function (){
+    return view('helloworld');
+});
 
 
-/// route for invoke controller :
-// Route::get('/userForm', [ApprenantsController::class, 'show'])->name('userRout');
-// Route::get('/user', ShowApprenants::class)->name('send');
+use Illuminate\Http\Request;
+
+Route::any('/user', function (Request $request) {
+    $name = $request->input("input");
+    return $name;
+});
+
+
+
