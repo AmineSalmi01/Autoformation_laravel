@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ShowApprenants extends Controller
+class SinglController extends Controller
 {
     /**
      * Handle the incoming request.
@@ -14,7 +14,7 @@ class ShowApprenants extends Controller
      */
     public function __invoke(Request $request)
     {
-        $name = $request->input("input");
+        $name = $request->input('input');
         return $name;
     }
 }
