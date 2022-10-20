@@ -13,7 +13,7 @@ class resController extends Controller
      */
     public function index()
     {
-        return 'hello';
+        return 'hello World';
     }
 
     /**

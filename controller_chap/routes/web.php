@@ -26,3 +26,10 @@ Route::any('/user', SinglController::class)->name('send');
 
 
 Route::resource('/promotions', resController::class);
+
+// Route::controller(resController::class)->group(function(){
+//     Route::get('promo1/{id}', 'show');
+//     Route::get('promo2', 'index');
+// });
+
+
