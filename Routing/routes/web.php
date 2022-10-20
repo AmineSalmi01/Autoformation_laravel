@@ -29,5 +29,9 @@ Route::any('/user', function (Request $request) {
     return $name;
 });
 
+Route::redirect('/home', '/request');
 
+Route::get('/product/{id?}/{name?}', function($id='4', $name='amine'){
+    return 'user :'.$id.' '.$name;
 
+});
