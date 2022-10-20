@@ -13,7 +13,7 @@ class resController extends Controller
      */
     public function index()
     {
-        //
+        return 'hello';
     }
 
     /**
@@ -43,9 +43,9 @@ class resController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id ='2')
+    public function show($id)
     {
-        //
+        return "the apprenants have a id : $id " ;
     }
 
     /**

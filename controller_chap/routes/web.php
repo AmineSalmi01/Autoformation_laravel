@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\resController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SinglController;
 
@@ -22,3 +23,6 @@ Route::get('/userForm', function(){
 })->name('userRout');
 
 Route::any('/user', SinglController::class)->name('send');
+
+
+Route::resource('/promotions', resController::class);
