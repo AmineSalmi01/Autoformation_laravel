@@ -21,4 +21,4 @@ Route::get('/userForm', function(){
     return view('form');
 })->name('userRout');
 
-Route::get('/user', SinglController::class)->name('send');
+Route::any('/user', SinglController::class)->name('send');

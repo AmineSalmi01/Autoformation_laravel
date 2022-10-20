@@ -1,5 +1,5 @@
 
-<form method="GET" action="{{ route('send') }}">
+<form method="POST" action="{{ route('send') }}">
     
     @csrf
     <input type="text" name="input">
