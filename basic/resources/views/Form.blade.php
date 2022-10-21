@@ -8,18 +8,14 @@
 </head>
 <body>
     
-    <form method="post" action="{{ route('insert') }}">
-        <!-- {{ csrf_field() }} -->
-        {{-- {{ csrf_token() }} --}}
+    <form method="POST" action="{{ route('Promotion.store') }}">
         
         @csrf
         <input type="text" name="input">
-        <button type="submit">Save</button>
+        <button type="submit">Add</button>
     </form>
 
-    @foreach ($data as $row)
-        <div> apprenants : {{ $row->name }} </div>
-    @endforeach
+
     
     
 </body>

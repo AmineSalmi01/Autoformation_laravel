@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\list_Promotion;
 use Illuminate\Http\Request;
 
-class request_Controller extends Controller
+class Promotion_controller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,10 @@ class request_Controller extends Controller
      */
     public function index()
     {
-        return view('index');
+        $data = list_Promotion::all();
+        return view('index',[
+            'data'=>$data
+        ]);
     }
 
     /**
@@ -23,7 +27,7 @@ class request_Controller extends Controller
      */
     public function create()
     {
-        //
+        return view('Form');
     }
 
     /**
@@ -34,7 +38,10 @@ class request_Controller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $promotion = new list_Promotion();
+        $promotion->name = $request->input('input');
+        $promotion->save();
+        return redirect()->route('Promotion.index');
     }
 
     /**
@@ -81,15 +88,4 @@ class request_Controller extends Controller
     {
         //
     }
-
-    public function Login(Request $request){
-        // $email=$request->input('email');
-        // $password=$request->input('password');
-        
-        // return 'Email : '. $email .' Password : '. $password;
-        // return "Email : $email Password : $password";
-
-        $input  = $request->collect();
-        return $input;
-    }   
 }
