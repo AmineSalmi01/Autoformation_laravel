@@ -81,4 +81,12 @@ class request_Controller extends Controller
     {
         //
     }
+
+    public function Login(Request $request){
+        $email=$request->input('email');
+        $password=$request->input('password');
+        
+        // return 'Email : '. $email .' Password : '. $password;
+        return "Email : $email Password : $password";
+    }   
 }

@@ -15,4 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::resource('/Form', request_Controller::class);
-
+Route::post('Login_form', [request_Controller::class,'Login'])->name('Login_Form');

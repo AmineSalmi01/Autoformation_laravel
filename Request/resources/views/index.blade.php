@@ -8,11 +8,11 @@
 </head>
 <body>
     
-    <form action="">
+    <form action="{{ route('Login_Form') }}" method="POST">
         @csrf
 
-        <input type="email" placeholder="email" name="input">
-        <input type="password" placeholder="password" name="input">
+        <input type="email" placeholder="email" name="email">
+        <input type="password" placeholder="password" name="password">
         <button name="submit" >Submit</button>
     </form>
     
