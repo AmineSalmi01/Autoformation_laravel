@@ -7,5 +7,6 @@ sreach_input.addEventListener('keyup', () => {
         return response.text()
     })).then((data)=>{
         console.log(data);
+        document.getElementById('content').innerHTML = data;
     })
 })
