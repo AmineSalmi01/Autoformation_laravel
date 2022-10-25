@@ -23,4 +23,7 @@ Route::get('/', function () {
 
 Route::resource('Promotion', Promotion_controller::class);
 
+Route::get('search', [Promotion_controller::class, 'search']);
+Route::get('search/{name}', [Promotion_controller::class, 'search']);
+
 

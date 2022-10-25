@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    <input type="search" name="search" id="search" placeholder="search">
     @foreach ($data as $row)
         <div>
             <div> Name Promotion : {{ $row->name }} </div>
@@ -21,5 +22,7 @@
         </div>
 
     @endforeach
+
+    <script src="{{ URL::asset('js/script.js') }}"></script>
 </body>
 </html>

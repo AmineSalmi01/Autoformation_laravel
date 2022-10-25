@@ -93,4 +93,16 @@ class Promotion_controller extends Controller
         list_Promotion::destroy($id);
         return redirect('Promotion');
     }
+
+    public function search($name = NULL){
+        if($name == NULL){
+            $promotion = list_Promotion::all();
+            return view('search_page',compact('promotion'));
+        }
+
+        else{
+            $promotion = list_Promotion::where('name', 'like', "%$name%")->get();
+            return view('search_page', compact('promotion'));
+        }
+    }
 }
