@@ -12,10 +12,12 @@
         
     <div>
         <div> Name Promotion : {{ $row->name }} </div>
+        <div><a href="{{ url('Promotion', $row->id . '/edit') }}">Edit</a></div>
     </div>
 
     @endforeach
 </div>
+
 
 </body>
 </html>
