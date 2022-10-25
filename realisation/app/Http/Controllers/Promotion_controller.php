@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Apprenant;
 use App\Models\list_Promotion;
 use Illuminate\Http\Request;
 
@@ -63,8 +64,12 @@ class Promotion_controller extends Controller
      */
     public function edit($id)
     {
-        $promotion = list_Promotion::find($id);
-        return view('edit', compact('promotion'));
+        $apprenants = Apprenant::select('email, prenom, nom, name, id_promotion, id')
+        ->RightJoin('list__promotions', 'list__promotions.id', '=', 'apprenants.id_promotion')
+        ->where('list__promottions.id', '=', $id)
+        ->get();
+
+        return $apprenants;
     }
 
     /**
@@ -106,4 +111,5 @@ class Promotion_controller extends Controller
             return view('search_page', compact('promotion'));
         }
     }
+
 }
