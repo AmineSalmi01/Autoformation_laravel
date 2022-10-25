@@ -7,11 +7,17 @@
     <title>Document</title>
 </head>
 <body>
-    <form action=" {{ route('Promotion.update', $promotion->id) }} " method="POST">
+    <form action=" {{ route('Promotion.update', $data[0]->id_promo) }} " method="POST">
         @csrf
         @method('PUT')
-        <input type="text" name="update_input" value="{{ $promotion->name }}">
+        <input type="text" name="update_input" value="{{ $data[0]->name }}">
         <input type="submit" value="update">
     </form>
+
+    @foreach ($data as $row)
+        <div>
+            <p>{{$row->nom}} - {{$row->prenom}} - {{$row->email}}</p>
+        </div>
+    @endforeach
 </body>
 </html>

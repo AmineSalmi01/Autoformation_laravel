@@ -64,12 +64,12 @@ class Promotion_controller extends Controller
      */
     public function edit($id)
     {
-        $apprenants = Apprenant::select('email, prenom, nom, name, id_promotion, id')
+        $data = Apprenant::select('email', 'prenom', 'nom', 'name', 'list__promotions.id as id_promo', 'apprenants.id')
         ->RightJoin('list__promotions', 'list__promotions.id', '=', 'apprenants.id_promotion')
-        ->where('list__promottions.id', '=', $id)
+        ->where('list__promotions.id', '=', $id)
         ->get();
 
-        return $apprenants;
+        return view('edit', compact('data'));
     }
 
     /**
