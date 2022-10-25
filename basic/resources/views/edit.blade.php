@@ -7,12 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    @foreach ($data as $row)
-        <div>
-            <div> Name Promotion : {{ $row->name }} </div>
-            <div><a href="{{ url('Promotion', $row->id . '/edit') }}">Edit</a></div>
-        </div>
-
-    @endforeach
+    <form action=" {{ route('Promotion.update', $promotion->id) }} " method="POST">
+        @csrf
+        @method('PUT')
+        <input type="text" name="update_input" value="{{ $promotion->name }}">
+        <input type="submit" value="update">
+    </form>
 </body>
 </html>

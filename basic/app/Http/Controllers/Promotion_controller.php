@@ -63,7 +63,8 @@ class Promotion_controller extends Controller
      */
     public function edit($id)
     {
-        //
+        $promotion = list_Promotion::find($id);
+        return view('edit', compact('promotion'));
     }
 
     /**
@@ -75,7 +76,10 @@ class Promotion_controller extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $update_promotion = list_Promotion::find($id);
+        $update_promotion->name = $request->input('update_input');
+        $update_promotion->save();
+        return redirect('Promotion');
     }
 
     /**
