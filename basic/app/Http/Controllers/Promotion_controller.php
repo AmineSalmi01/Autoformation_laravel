@@ -90,6 +90,7 @@ class Promotion_controller extends Controller
      */
     public function destroy($id)
     {
-        //
+        list_Promotion::destroy($id);
+        return redirect('Promotion');
     }
 }
