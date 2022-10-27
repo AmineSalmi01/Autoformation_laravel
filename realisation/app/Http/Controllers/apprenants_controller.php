@@ -7,8 +7,8 @@ use App\Models\Apprenant;
 
 class apprenants_controller extends Controller
 {
-    public function form_page($id){
-        $id_promotion = $id;
+    public function form_apprenants($id){
+        $id_promotion = $id;    
         return view('edit', compact('id_promotion'));
     }
 
@@ -20,7 +20,7 @@ class apprenants_controller extends Controller
         $add_apprenants->email = $request->email;
         $add_apprenants->id_promotion = $request->id_promotion;
         $add_apprenants->save();
-        redirect('edit');
+        redirect('edit', compact('add_apprenants'));
         
     }
 }

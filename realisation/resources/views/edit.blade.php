@@ -38,18 +38,19 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                   <form action="{{ route('Form_app') }}" method="POST">
+                   <form action="{{ route('add_appr') }}" method="POST">
                         
                         @csrf
                         <input type="text" name="prenom" placeholder="prenome">
                         <input type="tex" name="nom" placeholder="nome">
                         <input type="email" name="email" placeholder="email">
-                        <input type="hidden" name="promo_id" value="{{ $data[0]->id_promotion }}">
+                        
+                        <input type="hidden" name="id_promotion" value="{{ $data[0]->id_promotion }}">  
                    
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Add Apprenants</button>
+                <button type="submit" class="btn btn-primary"><a href="{{route('Form_appr', ['id'=>$data[0]->id_promotion])}}">ajouter appranants</a></button>
                 </div>
             </form>
             </div>
