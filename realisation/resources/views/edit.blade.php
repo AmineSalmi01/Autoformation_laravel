@@ -21,7 +21,7 @@
             <p>{{$row->nom}} - {{$row->prenom}} - {{$row->email}}</p>
         </div>
 
-
+        @endforeach
 
 
         <!-- Button  trigger modal -->
@@ -50,13 +50,13 @@
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary"><a href="{{route('Form_appr', ['id'=>$data[0]->id_promotion])}}">ajouter appranants</a></button>
+                <button type="submit" class="btn btn-primary"><a href="{{route('add_appr', ['id'=>$data[0]->id_promo])}}">ajouter appranants</a></button>
                 </div>
             </form>
             </div>
             </div>
         </div>
        
-    @endforeach
+
 </body>
 </html>

@@ -27,7 +27,7 @@ Route::resource('Promotion', Promotion_controller::class);
 Route::get('search', [Promotion_controller::class, 'search']);
 Route::get('search/{name}', [Promotion_controller::class, 'search']);
 
-Route::get('Appre_Form/{id?}', [apprenants_controller::class, 'form_apprenants'])->name('Form_appr');
+Route::get('Appre_Form/{id}', [apprenants_controller::class, 'form_apprenants'])->name('Form_appr');
 Route::post('/insert', [apprenants_controller::class, 'Add_apprenants'])->name('add_appr');
 
 

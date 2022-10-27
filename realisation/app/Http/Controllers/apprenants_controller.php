@@ -9,7 +9,8 @@ class apprenants_controller extends Controller
 {
     public function form_apprenants($id){
         $id_promotion = $id;    
-        return view('edit', compact('id_promotion'));
+        // return view('edit', compact('id_promotion'));
+        return redirect(route('Form_appr', ['id'=>$id_promotion]));
     }
 
     public function Add_apprenants(Request $request){
