@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\apprenants_controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Promotion_controller;
 
@@ -15,7 +16,7 @@ use App\Http\Controllers\Promotion_controller;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 // Route::get('/Save_page', [ApprenantsController::class, 'select'])->name('getRoute');
@@ -25,5 +26,8 @@ Route::resource('Promotion', Promotion_controller::class);
 
 Route::get('search', [Promotion_controller::class, 'search']);
 Route::get('search/{name}', [Promotion_controller::class, 'search']);
+
+Route::get('Appre_Form', [apprenants_controller::class, 'form_page']);
+Route::post('/insert', [apprenants_controller::class, 'Add_apprenants'])->name('Form_app');
 
 

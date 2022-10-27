@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    <button><a href="{{ route('Promotion.create') }}">add Promotion</a></button>
     <input type="search" name="search" id="search" placeholder="search">
     <div id="content" >
     @foreach ($data as $row)
