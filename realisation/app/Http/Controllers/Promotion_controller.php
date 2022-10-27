@@ -42,7 +42,7 @@ class Promotion_controller extends Controller
         $promotion = new list_Promotion();
         $promotion->name = $request->input('input');
         $promotion->save();
-        return redirect()->route('Promotion.index');
+        return redirect()->route('Promotion.index');    
     }
 
     /**

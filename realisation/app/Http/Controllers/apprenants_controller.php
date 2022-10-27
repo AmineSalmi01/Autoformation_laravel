@@ -21,7 +21,7 @@ class apprenants_controller extends Controller
         $add_apprenants->email = $request->email;
         $add_apprenants->id_promotion = $request->id_promotion;
         $add_apprenants->save();
-        redirect('edit', compact('add_apprenants'));
+        return redirect("Promotion/$add_apprenants->id_promotion/edit");
         
     }
 }

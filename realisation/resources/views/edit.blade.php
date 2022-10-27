@@ -45,14 +45,16 @@
                         <input type="tex" name="nom" placeholder="nome">
                         <input type="email" name="email" placeholder="email">
                         
-                        <input type="hidden" name="id_promotion" value="{{ $data[0]->id_promotion }}">  
-                   
+                        <input type="hidden" name="id_promotion" value="{{ $data[0]->id_promo }}">  
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">ajouter appranants</button>
+                        </div>
+                    </form>
                 </div>
-                <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary"><a href="{{route('add_appr', ['id'=>$data[0]->id_promo])}}">ajouter appranants</a></button>
-                </div>
-            </form>
+                
+            
             </div>
             </div>
         </div>
