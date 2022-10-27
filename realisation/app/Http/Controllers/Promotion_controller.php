@@ -68,7 +68,7 @@ class Promotion_controller extends Controller
         ->RightJoin('list__promotions', 'list__promotions.id', '=', 'apprenants.id_promotion')
         ->where('list__promotions.id', '=', $id)
         ->get();
-
+        // return $data;
         return view('edit', compact('data'));
     }
 

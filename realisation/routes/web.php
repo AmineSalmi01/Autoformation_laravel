@@ -30,4 +30,7 @@ Route::get('search/{name}', [Promotion_controller::class, 'search']);
 Route::get('Appre_Form/{id}', [apprenants_controller::class, 'form_apprenants'])->name('Form_appr');
 Route::post('/insert', [apprenants_controller::class, 'Add_apprenants'])->name('add_appr');
 
+Route::get('edited/{id}', [apprenants_controller::class, 'edit_form'])->name('edit_form_appr');
+Route::post('edited/{id}', [apprenants_controller::class, 'edit_apprenants'])->name('edit_apprenants');
+
 
