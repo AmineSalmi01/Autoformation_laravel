@@ -16,24 +16,57 @@
         <input type="submit" value="update">
     </form>
 
-    @if ($data[0]->id != null)
-        @foreach ($data as $row)
-        <div>
-            <p>{{$row->nom}} - {{$row->prenom}} - {{$row->email}}</p>
-            <div>
-                <button type="submit"><a href="{{ route('edit_form_appr', ['id'=>$row->id]) }}">Edit</a></button>
+    <table class="table">
+
+        <thead>
                 
-                <form action="{{ url('delete_apprenants' , ['id'=>$row->id]) }}" method="POST">
+            <tr>
+              <th scope="col">id</th>
+              <th scope="col">nom</th>
+              <th scope="col">prnom</th>
+              <th scope="col">email</th>
+              <th scope="col">Edit / Delete</th>
+            </tr>
 
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" >DELETE</button>
-                </form>
-            </div>
-        </div>
+        </thead>
 
-        @endforeach
-    @endif
+        @if ($data[0]->id != null)
+            @foreach ($data as $row)
+            <tbody>
+                <tr>
+                    <th scope="row">{{ $row->id }}</th>
+                    <th scope="row">{{$row->nom}}</th>
+                    <th scope="row">{{$row->prenom}}</th>
+                    <th scope="row">{{$row->email}}</th>
+                    <th scope="row">
+                        <button type="submit"><a href="{{ route('edit_form_appr', ['id'=>$row->id]) }}" class="btn btn-secondary">Edit</a></button>
+                        <form action="{{ url('delete_apprenants' , ['id'=>$row->id]) }}" method="POST">
+
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">DELETE</button>
+                        </form>
+                    </th>
+                </tr>
+            
+                {{-- <p>{{$row->nom}} - {{$row->prenom}} - {{$row->email}}</p>
+                <div>
+                    <button type="submit"><a href="{{ route('edit_form_appr', ['id'=>$row->id]) }}">Edit</a></button>
+                    
+                    <form action="{{ url('delete_apprenants' , ['id'=>$row->id]) }}" method="POST">
+
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" >DELETE</button>
+                    </form>
+                </div>
+            </div> --}}
+            </tbody>
+
+            @endforeach
+        @endif
+
+    </table>
 
 
         <!-- Button  trigger modal -->
