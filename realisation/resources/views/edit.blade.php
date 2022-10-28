@@ -16,16 +16,24 @@
         <input type="submit" value="update">
     </form>
 
-    @foreach ($data as $row)
+    @if ($data[0]->id != null)
+        @foreach ($data as $row)
         <div>
             <p>{{$row->nom}} - {{$row->prenom}} - {{$row->email}}</p>
             <div>
                 <button type="submit"><a href="{{ route('edit_form_appr', ['id'=>$row->id]) }}">Edit</a></button>
-                <button type="submit">Delete</button>
+                
+                <form action="{{ url('delete_apprenants' , ['id'=>$row->id]) }}" method="POST">
+
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" >DELETE</button>
+                </form>
             </div>
         </div>
 
         @endforeach
+    @endif
 
 
         <!-- Button  trigger modal -->

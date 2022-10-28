@@ -32,5 +32,7 @@ Route::post('/insert', [apprenants_controller::class, 'Add_apprenants'])->name('
 
 Route::get('edited/{id}', [apprenants_controller::class, 'edit_form'])->name('edit_form_appr');
 Route::post('edited/{id}', [apprenants_controller::class, 'edit_apprenants'])->name('edit_apprenants');
+Route::delete('delete_apprenants/{id}', [apprenants_controller::class, 'delete_appr'])->name('delete_apprenants');
+
 
 

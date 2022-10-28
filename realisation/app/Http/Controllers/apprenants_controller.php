@@ -32,12 +32,20 @@ class apprenants_controller extends Controller
         $update->nom = $request->nom;
         $update->email = $request->email;
         $update->save();
-        return redirect('Promotion/'.$update->id.'/edit');
+        return redirect('Promotion/'.$update->id_promotion.'/edit');
     }
     
     public function edit_form($id){
         $data = Apprenant::where('id',$id)->first();
         return view('edit_form', compact('data'));
         // return $data->id;
+    }
+
+    public function delete_appr($id_apprenants)
+    {
+        $data = Apprenant::where('id', $id_apprenants)->get();
+        $id_promo = $data[0]->id_promotion;
+        $data[0]->delete();
+        return redirect("/Promotion/$id_promo/edit");
     }
 }
