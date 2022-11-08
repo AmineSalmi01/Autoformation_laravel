@@ -9,6 +9,8 @@ use PhpParser\Node\Expr\FuncCall;
 class persone extends Model
 {
     public function Number(){
-        return $this->hasOne(Number::class);
+        // return $this->hasOne(Number::class);
+
+        return $this->hasMany(Number::class);
     }
 }

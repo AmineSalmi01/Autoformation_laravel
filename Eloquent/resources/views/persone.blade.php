@@ -9,9 +9,19 @@
 <body>
     {{-- <h1>{{ $person->name }} : {{ $person->Number->Phone_Number }}</h1> --}}
 
-    @foreach ($person as $item)
+    {{-- @foreach ($person as $item)
         <h1>{{ $item->name }} : {{ $item->Number->Phone_Number }}</h1>
+   @endforeach --}}
+   
+
+   @foreach ($person as $item)
+   <h3>{{ $item->name }}</h3>
+
+        @foreach ($item->Number as $item)
+            <h4>{{ $item->Phone_Number }}</h4>
+        @endforeach
     @endforeach
+
 
 </body>
 </html>
