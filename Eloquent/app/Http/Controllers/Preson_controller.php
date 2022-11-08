@@ -8,8 +8,7 @@ use Illuminate\Http\Request;
 class Preson_controller extends Controller
 {
     public function Show_person(){
-        $person = persone::where('id',1)->first();
-        $person->Number;
+        $person = persone::all();
 
         return view('persone', compact('person'));
     }

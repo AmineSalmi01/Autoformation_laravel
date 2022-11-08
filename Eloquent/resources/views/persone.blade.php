@@ -7,7 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>{{ $person->name }} : {{ $person->Number->Phone_Number }}</h1>
+    {{-- <h1>{{ $person->name }} : {{ $person->Number->Phone_Number }}</h1> --}}
+
+    @foreach ($person as $item)
+        <h1>{{ $item->name }} : {{ $item->Number->Phone_Number }}</h1>
+    @endforeach
 
 </body>
 </html>
